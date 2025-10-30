@@ -86,12 +86,12 @@ relationship VendorProduct {
 
 // Each Order is filled by exactly one Vendor; each Vendor may fill many Orders.
 relationship VendorOrder {
-    Vendor[1 | "vendor"] -> PurchaseOrder[0..N | "orders"]
+    Vendor[1 | "vendor"] -> Order[0..N | "orders"]
 }
 
 // Each Order has exactly one Product; each Product can be requested by many Orders.
 relationship OrderProduct {
-    PurchaseOrder[1 | "order"] -> Product[0..N | "product"]
+    Order[1 | "order"] -> Product[0..N | "product"]
 }
 
 // Additional modeling notes / business rules (documented):
